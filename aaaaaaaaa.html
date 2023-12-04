@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eagle Loading Line</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        #loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        .loading-line {
+            width: 300px;
+            height: 4px;
+            background: linear-gradient(to right,
+            #8E0E00 0%,
+            #00C9FF 10%,
+            #92FE9D 20%,
+            #f46b45 30%,
+            #eea849 40%,
+            #363795 50%,
+            #e53935 60%,
+            #fc00ff 70%,
+            #00dbde 80%,
+            #2c3e50 90%,
+            #304352 100%);
+        
+            position: relative;
+            overflow: hidden;
+        }
+
+        .eagle {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+
+        .eagle img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: -40px;
+        }
+
+        @keyframes lineAnimation {
+            0% {
+                transform: scaleX(0);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .index_page {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        .index_page .container1 {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .index_page .container1 img {
+            position: absolute;
+            width: 100%;
+            height: 714px;
+            z-index: -1;
+        }
+
+        .button {
+            position:fixed;
+            margin-top: 2%;
+            margin-left: 46%;
+            text-align: center;
+        }
+
+        .button .button1 {
+            color: black;
+            width: 120px;
+            border: none;
+            border-radius: 18px;
+            background-color: white;
+            margin: 36px;
+            font-size: 12px;
+            padding: 10px;  
+            font-weight: bold;
+        }
+
+        .button .button1:hover {
+            background-color: #FB5607;
+            color: white;
+            transition-duration: 1.8s;
+        }
+        
+        .button1 a {  
+            text-decoration: none;
+            color: black;
+        }
+        
+        .button1:hover a {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading animation -->
+    <div id="loading">
+        <div class="eagle">
+            <img src="1.png" alt="Eagle Icon">
+        </div>
+        <div class="loading-line"></div>
+    </div>
+
+    <!-- Page content -->
+    <div id="content" style="display: none;">
+        <div class="index_page">
+            <div class="container1">
+                <img src="Attributes/index.png" alt="no image">
+                <div class="button">
+                    <button type="submit" class="button1"><a href="payslip.php">ADD EMPLOYEE</a></button>
+                    <button type="submit" class="button1"><a href="salary_days_count.php">ADD SALARY</a></button>
+                    <button type="submit" class="button1"><a href="emp_payslip.php">PAYSLIP</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        // Function to update the eagle's image based on the loading percentage
+        function updateEagleImage(percentage) {
+            var eagle = document.querySelector(".eagle img");
+            if (percentage >= 0 && percentage < 20) {
+                eagle.src = "Attributes/1.png";
+            } else if (percentage >= 20 && percentage < 40) {
+                eagle.src = "Attributes/2.png";
+            } else if (percentage >= 40 && percentage < 60) {
+                eagle.src = "Attributes/3.png";
+            } else if (percentage >= 60 && percentage < 80) {
+                eagle.src = "Attributes/4.png";
+            } else if (percentage >= 80 && percentage <= 100) {
+                eagle.src = "Attributes/5.png";
+            }
+        }
+
+        // Get the duration of the animation in milliseconds
+        var animationDuration = 8000; // 8 seconds
+
+        // Get the percentage of the line's animation based on the duration
+        var linePercentage = (animationDuration / 8000) * 100;
+
+        // Set the animation duration for the line
+        document.querySelector(".loading-line").style.animationDuration = `${linePercentage}%`;
+
+        // Update the eagle's image on animation start and every 10% interval
+        updateEagleImage(0); // Initial image
+        setTimeout(function() {
+            updateEagleImage(10);
+        }, animationDuration * 0.1);
+        setTimeout(function() {
+            updateEagleImage(20);
+        }, animationDuration * 0.2);
+        setTimeout(function() {
+            updateEagleImage(30);
+        }, animationDuration * 0.3);
+        setTimeout(function() {
+            updateEagleImage(40);
+        }, animationDuration * 0.4);
+        setTimeout(function() {
+            updateEagleImage(50);
+        }, animationDuration * 0.5);
+        setTimeout(function() {
+            updateEagleImage(60);
+        }, animationDuration * 0.6);
+        setTimeout(function() {
+            updateEagleImage(70);
+        }, animationDuration * 0.7);
+        setTimeout(function() {
+            updateEagleImage(80);
+        }, animationDuration * 0.8);
+        setTimeout(function() {
+            updateEagleImage(90);
+        }, animationDuration * 0.9);
+        setTimeout(function() {
+            updateEagleImage(100);
+            showPage(); // Show the page content after the animation is complete
+        }, animationDuration);
+
+        // Set the delay time in milliseconds
+        var delayTime = 5000;
+
+        // Function to show the page content
+        function showPage() {
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("content").style.display = "block";
+        }
+
+        // Function to check if the content is ready and show the page
+        function checkContent() {
+            if (document.readyState === "complete") {
+                // Content is ready, show the page
+                showPage();
+            } else {
+                // Content is not ready, continue looping
+                setTimeout(checkContent, delayTime);
+            }
+        }
+
+        // Start the loop to check the content readiness
+        setTimeout(checkContent, delayTime);
+    </script>
+</body>
+</html>

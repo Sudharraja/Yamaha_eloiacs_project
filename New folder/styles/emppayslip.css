@@ -1,0 +1,165 @@
+
+thead
+{
+width: 100%;
+height: 66px;
+flex-shrink: 0;
+background: linear-gradient(166deg, #FE9901 0%, #FC7205 100%);
+
+}
+.table-bordered thead th
+{
+    color: #FFF;
+font-size: 15px;
+font-family: Inter;
+font-weight: 900;
+letter-spacing: 0.3px;
+
+}
+
+table.table-bordered
+{
+    
+    width: max-content;
+    margin-left: -12px;
+}
+.table-bordered tr td
+{
+
+flex-shrink: 0;
+    border-bottom: 0.5px solid #000;
+background: #D9D9D9;
+
+}
+.table-bordered tr:hover td
+{
+    background-color: #FFF;
+    color: black;
+}
+
+td .btnn_download
+{
+    width: 120px;
+height: 30px;
+flex-shrink: 0;
+border-radius: 2px;
+background: #FB5607;
+text-decoration: none;
+color: #FFF;
+font-size: 16px;
+padding: 3px 7px 3px 7px;
+font-family: Quicksand;
+font-weight: 700;
+letter-spacing: 0.3px;
+text-decoration: none;
+
+}
+td .btnn_download :hover
+{
+    color: white;
+    background: #FB5607;
+}
+
+.btn_search_emp
+{
+    border: 0px solid;
+    background-color: #ffffff00;
+    padding: 6px;
+    font-size: 20px;
+    text-align: right;
+    margin-left: -40px;
+    margin-top: 5px;
+}
+.btn_search_emp i
+{
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: #FB5607;
+}
+input.form-control {
+    border:none;
+    width: 61px;
+    margin-right: 40px;
+}
+
+/*    top 1 */
+.col-md-9 .emp_pay_search
+{
+    width: 21.5%;
+    height: 45px;
+    padding: 0px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    border: 1px solid #FB5607;
+    margin: 30px;
+    display: flex;
+    
+}
+.col-md-9 .col-auto_year
+{
+    padding: 1px;
+    height: 42px;
+    background-color: #fff;
+    text-align: center;
+    margin-left: -11px;
+    text-decoration: none;
+    border: none;
+}
+
+
+.col-md-9 .emp_pay_search .col-auto_month {
+    width: 91%;
+    height: 42px;
+    border: 0px solid;
+    background-color: #ffffff00;
+    padding: 0px 6px;
+}
+.table_over_scr_ol
+{
+    width: 98%;
+    overflow-x: scroll;
+    overflow-y: hidden; 
+    height:520px;
+    margin-left: 15px;
+    
+
+}
+.container1 {
+    width: 98%;
+}
+
+.table_over_scr_ol::-webkit-scrollbar 
+{
+    width: 3px;
+	background-color: #FC7205;
+    margin-left: 15px;
+}
+  
+/***** width max ****/
+
+.col-md-9 {
+    width: 83% !important;
+    margin-left: 19%;
+    height: 100vh;
+    position: fixed;
+}
+.col-md-3
+{
+    width: 17%;
+
+}
+a.btnn_download:hover {
+    color: white;
+}
+a.btn_search_emp_downld {
+    float: right;
+    margin: 10px 39px;
+    border: 1px solid #fb5407;
+    background-color: #fb5407;
+    color: #fff;
+    font-size: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    font-weight: 700;
+}

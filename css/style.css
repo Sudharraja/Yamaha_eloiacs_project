@@ -1,0 +1,56 @@
+/********************ADD_PRODUCT.PHP**********************/
+.container_pro{
+    margin-left: 30px;
+}
+h4.h4{
+    margin-top:15px;
+    font-weight: 800;
+}
+.btn_logout{
+    margin-top: 3%;
+    margin-left: 87%;
+    background-color: blue;
+    color: white;
+    width: 11%;
+    font-weight: bold;
+    padding: 2px;
+    border-radius: 5px;
+}
+.label{
+margin-top: 4px;
+margin-bottom: 8px;
+width: 50%;
+font-size: 20px;
+}
+.input{
+width: 86%;
+height: 38px;
+margin-bottom: 10px;
+border-radius: 5px;
+border: 1px solid blue;
+}
+.save{
+margin-top: 20px;
+margin-left: 42%;
+width: 65px;
+height: 32px;
+background-color: blue;
+color: white;
+border-radius: 5px;
+font-weight: bold;
+}
+
+
+
+
+.container1{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding-left: 30px;
+    padding-top: 4px;
+    margin-top: 25px;
+    border-radius: 15px;
+    padding-bottom: 20px;
+}
+
+
+/******************main.php******************/
